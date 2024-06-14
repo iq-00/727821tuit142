@@ -3,6 +3,7 @@ export default class functions {
 
     prime(token) {
         return new Promise(async (res, rej) => {
+            console.log("prime");
             let value = (await axios.get("http://20.244.56.144/test/primes", { headers: { "Authorization": "Bearer " + token } })).data
             res(value)
         })
@@ -10,6 +11,7 @@ export default class functions {
 
     fibo(token) {
         return new Promise(async (res, rej) => {
+            console.log("fibo");
             let value = (await axios.get("http://20.244.56.144/test/fibo", { headers: { "Authorization": "Bearer " + token } })).data
             res(value)
         })
@@ -17,6 +19,7 @@ export default class functions {
 
     even(token) {
         return new Promise(async (res, rej) => {
+            console.log("even");
             let value = (await axios.get("http://20.244.56.144/test/even", { headers: { "Authorization": "Bearer " + token } })).data
             res(value)
         })
@@ -24,6 +27,7 @@ export default class functions {
 
     random(token) {
         return new Promise(async (res, rej) => {
+            console.log("random");
             let value = (await axios.get("http://20.244.56.144/test/rand", { headers: { "Authorization": "Bearer " + token } })).data
             res(value)
         })
