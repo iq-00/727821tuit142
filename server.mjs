@@ -44,6 +44,6 @@ server.on("request", async (request, response) => {
 
 
 // server running on default port
-server.listen(80, "192.168.247.121", ev => {
+server.listen(80, ev => {
     console.log("server running on default port");
 })
