@@ -17,9 +17,26 @@ server.on("request", async (request, response) => {
     }
 
     if (request.url.startsWith("/numbers/p")) {
-        console.log(authToken);
         let val = await fun.prime(authToken)
         console.log(val);
+        response.end(JSON.stringify(val))
+    }
+
+    if (request.url.startsWith("/numbers/f")) {
+        let val = await fun.fibo(authToken)
+        console.log(val);
+        response.end(JSON.stringify(val))
+    }
+
+    if (request.url.startsWith("/numbers/e")) {
+        let val = await fun.even(authToken)
+        console.log(val);
+        response.end(JSON.stringify(val))
+    }
+    if (request.url.startsWith("/numbers/r")) {
+        let val = await fun.random(authToken)
+        console.log(val);
+        response.end(JSON.stringify(val))
     }
 
 })
@@ -28,5 +45,5 @@ server.on("request", async (request, response) => {
 
 // server running on default port
 server.listen(80, "192.168.247.121", ev => {
-    console.log("server running on default post");
+    console.log("server running on default port");
 })

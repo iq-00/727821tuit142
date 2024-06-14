@@ -1,10 +1,30 @@
-import { log } from "console"
 import axios from "axios"
 export default class functions {
 
     prime(token) {
         return new Promise(async (res, rej) => {
-            let value = (await axios.get("http://20.244.56.144/test/primes", { headers: { "Authorization": "Bearer "+token } })).data
+            let value = (await axios.get("http://20.244.56.144/test/primes", { headers: { "Authorization": "Bearer " + token } })).data
+            res(value)
+        })
+    }
+
+    fibo(token) {
+        return new Promise(async (res, rej) => {
+            let value = (await axios.get("http://20.244.56.144/test/fibo", { headers: { "Authorization": "Bearer " + token } })).data
+            res(value)
+        })
+    }
+
+    even(token) {
+        return new Promise(async (res, rej) => {
+            let value = (await axios.get("http://20.244.56.144/test/even", { headers: { "Authorization": "Bearer " + token } })).data
+            res(value)
+        })
+    }
+
+    random(token) {
+        return new Promise(async (res, rej) => {
+            let value = (await axios.get("http://20.244.56.144/test/rand", { headers: { "Authorization": "Bearer " + token } })).data
             res(value)
         })
     }
